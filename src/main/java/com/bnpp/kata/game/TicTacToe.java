@@ -1,5 +1,6 @@
 package com.bnpp.kata.game;
 
+import com.bnpp.kata.Strategy.BottomLeftToTopRightStrategy;
 import com.bnpp.kata.Strategy.HorizontalStrategy;
 import com.bnpp.kata.Strategy.TopLeftToBottomRightStrategy;
 import com.bnpp.kata.Strategy.VerticalStrategy;
@@ -42,7 +43,8 @@ public class TicTacToe {
 	private GameResult getPlayResult() {
 		if (new HorizontalStrategy().matches(this)
 				|| new VerticalStrategy().matches(this)
-				|| new TopLeftToBottomRightStrategy().matches(this)) {
+				|| new TopLeftToBottomRightStrategy().matches(this)
+				|| new BottomLeftToTopRightStrategy().matches(this)) {
 			return GameResult.WINNER;
 		}
 		return GameResult.NO_WINNER;
