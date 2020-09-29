@@ -251,7 +251,7 @@ public class TicTacToeTest {
 	}
 	
 	@Test
-	public void givenTestNewPosition1() throws Exception {
+	public void givenTestNewSecondPosition() throws Exception {
 		
 		ticTacToe.secondRoundPlay(2, 2); // O
 
