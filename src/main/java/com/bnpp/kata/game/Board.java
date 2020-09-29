@@ -5,6 +5,7 @@ import com.bnpp.kata.exception.InvalidGridSizeException;
 public class Board {
 	private final int size;
 	private char[][] grid;
+	private static final char EMPTY = ' ';
 
 	public Board(int size) {
 		this.size = size;	
@@ -20,7 +21,7 @@ public class Board {
 		grid = new char[size][size];
 		for (int row = 0; row < size; row++) {
 			for (int column = 0; column < size; column++) {
-				grid[row][column] = ' ';
+				grid[row][column] = EMPTY;
 			}
 		}
 	}
