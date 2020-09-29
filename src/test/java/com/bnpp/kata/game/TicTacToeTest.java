@@ -247,7 +247,7 @@ public class TicTacToeTest {
 	@Test
 	public void givenTestNewPosition() throws Exception {
 
-		assertThat(ticTacToe.firstPlayer(), CoreMatchers.is('O'));
+		assertThat(ticTacToe.firstPlayer(), CoreMatchers.is('X'));
 	}
 	
 	@Test
