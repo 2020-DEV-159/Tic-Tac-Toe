@@ -2,6 +2,7 @@ package com.bnpp.kata.game;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import com.bnpp.kata.exception.InvalidGridSizeException;
+import com.bnpp.kata.exception.InvalidPositionException;
 import static org.junit.Assert.assertThat;
 import org.hamcrest.CoreMatchers;
 import org.junit.Before;
@@ -95,7 +96,7 @@ public class TicTacToeTest {
 
 		assertThat(ticTacToe.play(3, 3), CoreMatchers.is(GameResult.WINNER)); // X is the WINNER
 	}
-	
+
 	@Test
 	public void givenXHasPlayedAllHorizontalLinesPlayerOIsTheWinner() {
 
@@ -105,5 +106,11 @@ public class TicTacToeTest {
 		ticTacToe.play(2, 2); // O
 
 		assertThat(ticTacToe.play(3, 3), CoreMatchers.is(GameResult.WINNER)); // O is the WINNER
+	}
+
+	@Test
+	public void givenAColumnIsOutsideOfBoardWhenRuntimeExceptionIsThrown() {
+
+		assertThatThrownBy(() -> ticTacToe.play(2, 5)).isInstanceOf(InvalidPositionException.class);
 	}
 }

@@ -1,6 +1,7 @@
 package com.bnpp.kata.game;
 
 import com.bnpp.kata.Strategy.HorizontalStrategy;
+import com.bnpp.kata.exception.InvalidPositionException;
 
 public class TicTacToe {
 	private char lastPlayer;
@@ -43,7 +44,8 @@ public class TicTacToe {
 	}
 
 	private void checkPosition(int position) {
-		if (position < 1 || position > board.getSize());
+		if (position < 1 || position > board.getSize())
+			throw new InvalidPositionException("The position player is invalid!");
 	}
 
 	private void assignSpot(int row, int column, char player) {
