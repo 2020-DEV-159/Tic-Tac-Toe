@@ -84,4 +84,15 @@ public class TicTacToeTest {
 		assertThat(ticTacToe.play(3, 3), CoreMatchers.is(GameResult.NO_WINNER)); // X is NOT the WINNER
 		assertThat(ticTacToe.play(3, 1), CoreMatchers.is(GameResult.NO_WINNER)); // O is NOT the WINNER
 	}
+
+	@Test
+	public void givenXHasPlayedAllHorizontalLinesPlayerXIsTheWinner() {
+
+		ticTacToe.play(3, 1); // X
+		ticTacToe.play(2, 1); // O
+		ticTacToe.play(3, 2); // X
+		ticTacToe.play(2, 2); // O
+
+		assertThat(ticTacToe.play(3, 3), CoreMatchers.is(GameResult.WINNER)); // X is the WINNER
+	}
 }

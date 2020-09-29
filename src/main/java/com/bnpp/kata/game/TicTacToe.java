@@ -27,7 +27,10 @@ public class TicTacToe {
 	}
 
 	public GameResult play(int row, int column) {
+		checkPosition(row);
+		checkPosition(column);
 		lastPlayer = nextPlayer();
+		assignSpot(row, column, lastPlayer);
 		return getPlayResult();
 	}
 
@@ -36,6 +39,16 @@ public class TicTacToe {
 			return GameResult.WINNER;
 		}
 		return GameResult.NO_WINNER;
+	}
+
+	private void checkPosition(int position) {
+		if (position < 1 || position > board.getSize());
+	}
+
+	private void assignSpot(int row, int column, char player) {
+		if (board.getGrid()[row - 1][column - 1] == ' ') {
+			board.getGrid()[row - 1][column - 1] = player;
+		}
 	}
 
 	public Board getBoard() {
