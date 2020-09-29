@@ -10,7 +10,7 @@ public class HorizontalStrategy implements PlayStrategy {
 		for (int row = 0; row < game.getBoard().getSize(); row++) {
 			numOfMatches = 0;
 			for (int column = 0; column < game.getBoard().getSize(); column++) {
-				if (game.getBoard().getGrid()[row][column] == 'X') {
+				if (game.getBoard().getGrid()[row][column] == game.getLastPlayer()) {
 					numOfMatches++;
 				}
 			}
