@@ -1,5 +1,7 @@
 package com.bnpp.kata.game;
 
+import com.bnpp.kata.Strategy.PlayStrategy;
+
 public class TicTacToe {
 	private char lastPlayer;
 	private final Board board;
@@ -30,6 +32,9 @@ public class TicTacToe {
 	}
 
 	private GameResult getPlayResult() {
+		if (PlayStrategy.matches(this)) {
+			return GameResult.WINNER;
+		}
 		return GameResult.NO_WINNER;
 	}
 }
