@@ -54,9 +54,16 @@ public class TicTacToe {
 	}
 
 	private boolean isDraw() {
-		return false;
+		for (int row = 0; row < board.getSize(); row++) {
+			for (int column = 0; column < board.getSize(); column++) {
+				if (board.getGrid()[row][column] == EMPTY) {
+					return false;
+				}
+			}
+		}
+		return true;
 	}
-	
+
 	private void checkPosition(int position) {
 		if (position < 1 || position > board.getSize())
 			throw new InvalidPositionException("The position player is invalid!");
