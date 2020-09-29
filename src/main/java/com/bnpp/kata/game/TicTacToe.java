@@ -44,12 +44,19 @@ public class TicTacToe {
 		if (new HorizontalStrategy().matches(this)
 				|| new VerticalStrategy().matches(this)
 				|| new TopLeftToBottomRightStrategy().matches(this)
-				|| new BottomLeftToTopRightStrategy().matches(this)) {
+				|| new BottomLeftToTopRightStrategy().matches(this)){
 			return GameResult.WINNER;
+		}
+		if (isDraw()) {
+			return GameResult.DRAW;
 		}
 		return GameResult.NO_WINNER;
 	}
 
+	private boolean isDraw() {
+		return false;
+	}
+	
 	private void checkPosition(int position) {
 		if (position < 1 || position > board.getSize())
 			throw new InvalidPositionException("The position player is invalid!");
