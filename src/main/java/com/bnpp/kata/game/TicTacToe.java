@@ -1,11 +1,11 @@
 package com.bnpp.kata.game;
 
-import com.bnpp.kata.Strategy.PlayStrategy;
+import com.bnpp.kata.Strategy.HorizontalStrategy;
 
 public class TicTacToe {
 	private char lastPlayer;
 	private final Board board;
-	
+
 	public TicTacToe(int boardSize) {
 		board = new Board(boardSize);
 	}
@@ -32,7 +32,7 @@ public class TicTacToe {
 	}
 
 	private GameResult getPlayResult() {
-		if (PlayStrategy.matches(this)) {
+		if (new HorizontalStrategy().matches(this)) {
 			return GameResult.WINNER;
 		}
 		return GameResult.NO_WINNER;

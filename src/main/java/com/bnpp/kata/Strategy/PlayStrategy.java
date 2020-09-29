@@ -4,7 +4,5 @@ import com.bnpp.kata.game.TicTacToe;
 
 public interface PlayStrategy {
 
-	static boolean matches(TicTacToe game) {
-		return false;
-	}
+	boolean matches(TicTacToe game);
 }
