@@ -3,6 +3,7 @@ package com.bnpp.kata.game;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import com.bnpp.kata.exception.InvalidGridSizeException;
 import com.bnpp.kata.exception.InvalidPositionException;
+import com.bnpp.kata.exception.SpotUnavailableException;
 import static org.junit.Assert.assertThat;
 import org.hamcrest.CoreMatchers;
 import org.junit.Before;
@@ -112,5 +113,13 @@ public class TicTacToeTest {
 	public void givenAColumnIsOutsideOfBoardWhenRuntimeExceptionIsThrown() {
 
 		assertThatThrownBy(() -> ticTacToe.play(2, 5)).isInstanceOf(InvalidPositionException.class);
+	}
+
+	@Test
+	public void givenAPlayrSpotIsOccupiedRuntimeExceptionIsThrown() {
+
+		ticTacToe.play(2, 2);
+
+		assertThatThrownBy(() -> ticTacToe.play(2, 2)).isInstanceOf(SpotUnavailableException.class);
 	}
 }

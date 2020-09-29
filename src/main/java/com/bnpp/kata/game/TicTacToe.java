@@ -2,6 +2,7 @@ package com.bnpp.kata.game;
 
 import com.bnpp.kata.Strategy.HorizontalStrategy;
 import com.bnpp.kata.exception.InvalidPositionException;
+import com.bnpp.kata.exception.SpotUnavailableException;
 
 public class TicTacToe {
 	private char lastPlayer;
@@ -51,6 +52,9 @@ public class TicTacToe {
 	private void assignSpot(int row, int column, char player) {
 		if (board.getGrid()[row - 1][column - 1] == EMPTY) {
 			board.getGrid()[row - 1][column - 1] = player;
+		}
+		else {
+			throw new SpotUnavailableException("This spot has already been taken");
 		}
 	}
 
