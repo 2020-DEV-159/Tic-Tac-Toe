@@ -44,4 +44,13 @@ public class TicTacToeTest {
 
 		assertThat(ticTacToe.SecondPlayer(), CoreMatchers.is('O'));
 	}
+
+	@Test
+	public void givenSecondRoundPlayerItShouldBePlayerXANDY() {
+
+		ticTacToe.play(1, 1); // X
+		ticTacToe.play(2, 2); // O
+
+		assertThat(ticTacToe.nextPlayer(), CoreMatchers.is('X'));
+	}
 }
