@@ -39,8 +39,7 @@ public class TicTacToeGameRunner extends JFrame{
 		return button;
 	}
 
-	public static void main(String[] args) {
-		System.out.println("hello");      
+	public static void main(String[] args) { 
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
 				new TicTacToeGameRunner();
