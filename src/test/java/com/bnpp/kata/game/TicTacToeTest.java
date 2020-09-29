@@ -122,4 +122,15 @@ public class TicTacToeTest {
 
 		assertThatThrownBy(() -> ticTacToe.play(2, 2)).isInstanceOf(SpotUnavailableException.class);
 	}
+
+	@Test
+	public void givenXHasPlayedAllVerticalLinesPlayerXIsTheWinner() {
+
+		ticTacToe.play(1, 1); // X
+		ticTacToe.play(1, 3); // O
+		ticTacToe.play(2, 1); // X
+		ticTacToe.play(2, 3); // O
+
+		assertThat(ticTacToe.play(3, 1), CoreMatchers.is(GameResult.WINNER)); // X is the WINNER
+	}
 }
