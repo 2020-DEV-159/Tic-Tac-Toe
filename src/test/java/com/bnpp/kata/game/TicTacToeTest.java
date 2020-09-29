@@ -28,4 +28,12 @@ public class TicTacToeTest {
 
 		assertThat(ticTacToe.firstPlayer(), CoreMatchers.is('X'));
 	}
+
+	@Test
+	public void givenSecondRoundPlayerItShouldBePlayerI() {
+
+		ticTacToe.secondRoundPlay(1, 1); // X
+
+		assertThat(ticTacToe.firstPlayer(), CoreMatchers.is('X'));
+	}
 }

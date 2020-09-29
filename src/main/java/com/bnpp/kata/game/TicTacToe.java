@@ -18,4 +18,8 @@ public class TicTacToe {
 	public void play(int row, int column) {
 		lastPlayer = nextPlayer();
 	}
+
+	public void secondRoundPlay(int row, int column) {
+		lastPlayer = SecondPlayer();
+	}
 }
