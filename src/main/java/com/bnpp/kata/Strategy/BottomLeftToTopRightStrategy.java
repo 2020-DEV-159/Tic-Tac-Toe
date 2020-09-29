@@ -9,7 +9,7 @@ public class BottomLeftToTopRightStrategy implements PlayStrategy {
 		int numOfMatches = 0;
 		int column = 0;
 		for (int row = (game.getBoard().getSize() - 1); row >= 0; row--) {
-			if (game.getBoard().getGrid()[row][column] == 'X') {
+			if (game.getBoard().getGrid()[row][column] == game.getLastPlayer()) {
 				numOfMatches++;
 			}
 			column++;
