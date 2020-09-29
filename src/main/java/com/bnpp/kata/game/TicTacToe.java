@@ -2,6 +2,11 @@ package com.bnpp.kata.game;
 
 public class TicTacToe {
 	private char lastPlayer;
+	private final Board board;
+
+	public TicTacToe(int boardSize) {
+		board = new Board(boardSize);
+	}
 
 	public char firstPlayer() {
 		return 'X' ;

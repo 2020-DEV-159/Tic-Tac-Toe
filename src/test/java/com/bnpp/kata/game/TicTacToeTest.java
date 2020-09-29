@@ -5,7 +5,7 @@ import org.hamcrest.CoreMatchers;
 import org.junit.Test;
 
 public class TicTacToeTest {
-	TicTacToe ticTacToe = new TicTacToe();
+	TicTacToe ticTacToe = new TicTacToe(3);
 
 	@Test
 	public void givenFirstTurnPlayerItShouldBeX() {
