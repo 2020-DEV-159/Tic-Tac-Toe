@@ -145,4 +145,15 @@ public class TicTacToeTest {
 
 		assertThat(ticTacToe.play(3, 2), CoreMatchers.is(GameResult.WINNER)); // O is the WINNER
 	}
+
+	@Test
+	public void givenXHasPlayedFromTopLeftToBottomRightPlayerXIsTheWinner() {
+
+		ticTacToe.play(1, 1); // X
+		ticTacToe.play(1, 2); // O
+		ticTacToe.play(2, 2); // X
+		ticTacToe.play(2, 3); // O
+
+		assertThat(ticTacToe.play(3, 3), CoreMatchers.is(GameResult.WINNER)); // X is the WINNER
+	}
 }
