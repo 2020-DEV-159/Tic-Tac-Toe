@@ -5,19 +5,16 @@ import org.hamcrest.CoreMatchers;
 import org.junit.Test;
 
 public class TicTacToeTest {
+	TicTacToe ticTacToe = new TicTacToe();
 
 	@Test
 	public void givenFirstTurnPlayerItShouldBeX() {
-
-		TicTacToe ticTacToe = new TicTacToe();
 
 		assertThat(ticTacToe.firstPlayer(), CoreMatchers.is('X'));
 	}
 
 	@Test
 	public void givenSecondTurnPlayerItShouldBePlayerY() {
-
-		TicTacToe ticTacToe = new TicTacToe();
 
 		ticTacToe.play(2, 2); // X
 
