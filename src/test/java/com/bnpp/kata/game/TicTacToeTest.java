@@ -67,4 +67,10 @@ public class TicTacToeTest {
 
 		assertThatThrownBy(() -> new TicTacToe(2)).isInstanceOf(InvalidGridSizeException.class);
 	}
+
+	@Test
+	public void givenACertainMovesPlayerXONoWinners() {
+
+		assertThat(ticTacToe.play(1, 1), CoreMatchers.is(GameResult.NO_WINNER)); // X is NOT the WINNER
+	}
 }
