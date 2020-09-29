@@ -1,11 +1,19 @@
 package com.bnpp.kata.game;
 
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import com.bnpp.kata.exception.InvalidGridSizeException;
 import static org.junit.Assert.assertThat;
 import org.hamcrest.CoreMatchers;
+import org.junit.Before;
 import org.junit.Test;
 
 public class TicTacToeTest {
-	TicTacToe ticTacToe = new TicTacToe(3);
+	private TicTacToe ticTacToe;
+
+	@Before
+	public void setUp() {
+		ticTacToe = new TicTacToe(3);
+	}
 
 	@Test
 	public void givenFirstTurnPlayerItShouldBeX() {
@@ -52,5 +60,11 @@ public class TicTacToeTest {
 		ticTacToe.play(2, 2); // O
 
 		assertThat(ticTacToe.nextPlayer(), CoreMatchers.is('X'));
+	}
+
+	@Test
+	public void givenAnInvalidGridSizeNewTicTacToeInvalidGridSizeExceptionIsThrown() {
+
+		assertThatThrownBy(() -> new TicTacToe(2)).isInstanceOf(InvalidGridSizeException.class);
 	}
 }
