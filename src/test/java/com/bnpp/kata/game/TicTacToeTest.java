@@ -156,4 +156,16 @@ public class TicTacToeTest {
 
 		assertThat(ticTacToe.play(3, 3), CoreMatchers.is(GameResult.WINNER)); // X is the WINNER
 	}
+	
+	@Test
+	public void givenOHasPlayedFromTopLeftToBottomRightPlayerOIsTheWinner() {
+
+		ticTacToe.play(1, 2); // X
+		ticTacToe.play(1, 1); // O
+		ticTacToe.play(2, 1); // X
+		ticTacToe.play(2, 2); // O
+		ticTacToe.play(3, 2); // X
+
+		assertThat(ticTacToe.play(3, 3), CoreMatchers.is(GameResult.WINNER)); // O is the WINNER
+	}
 }
