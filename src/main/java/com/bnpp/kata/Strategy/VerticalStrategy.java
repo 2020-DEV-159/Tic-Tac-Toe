@@ -10,7 +10,7 @@ public class VerticalStrategy implements PlayStrategy {
 		for (int row = 0; row < game.getBoard().getSize(); row++) {
 			numOfMatches = 0;
 			for (int column = 0; column < game.getBoard().getSize(); column++) {
-				if (game.getBoard().getGrid()[column][row] == 'X') {
+				if (game.getBoard().getGrid()[column][row] == game.getLastPlayer()) {
 					numOfMatches++;
 				}
 			}
