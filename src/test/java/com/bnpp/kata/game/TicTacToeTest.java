@@ -1,5 +1,6 @@
 package com.bnpp.kata.game;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import com.bnpp.kata.exception.InvalidGridSizeException;
 import com.bnpp.kata.exception.InvalidPositionException;
@@ -206,10 +207,10 @@ public class TicTacToeTest {
 
 		assertThat(ticTacToe.play(3, 3), CoreMatchers.is(GameResult.DRAW)); // All spots have been field, so we have a DRAW
 	}
-	
+
 	@Test
 	public void givenAnEmptyBoardwhenShowIsEquals() {
-		
+
 		String actualEmptyBoard = ticTacToe.getBoard().show();
 		String expectedEmptyBoard =
 				"   |   |   \n" +
@@ -219,5 +220,25 @@ public class TicTacToeTest {
 						"   |   |   ";
 
 		assertThat(actualEmptyBoard, CoreMatchers.is(expectedEmptyBoard));
+	}
+
+	@Test
+	public void givenABoardWhenShowIsEquals() {
+
+		ticTacToe.play(1, 1);
+		ticTacToe.play(1, 2);
+		ticTacToe.play(2, 2);
+		ticTacToe.play(1, 3);
+		ticTacToe.play(3, 3);
+
+		String actualBoard = ticTacToe.getBoard().show();
+		String expectedBoard =
+				" X | O | O \n" +
+						"---|---|---\n" +
+						"   | X |   \n" +
+						"---|---|---\n" +
+						"   |   | X ";
+
+		assertThat(actualBoard).isEqualTo(expectedBoard);
 	}
 }
