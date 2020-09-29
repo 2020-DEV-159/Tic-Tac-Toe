@@ -1,6 +1,7 @@
 package com.bnpp.kata.game;
 
 import com.bnpp.kata.Strategy.HorizontalStrategy;
+import com.bnpp.kata.Strategy.VerticalStrategy;
 import com.bnpp.kata.exception.InvalidPositionException;
 import com.bnpp.kata.exception.SpotUnavailableException;
 
@@ -38,7 +39,8 @@ public class TicTacToe {
 	}
 
 	private GameResult getPlayResult() {
-		if (new HorizontalStrategy().matches(this)) {
+		if (new HorizontalStrategy().matches(this)
+				|| new VerticalStrategy().matches(this)) {
 			return GameResult.WINNER;
 		}
 		return GameResult.NO_WINNER;
