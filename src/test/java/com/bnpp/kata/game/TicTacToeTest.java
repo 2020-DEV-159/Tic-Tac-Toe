@@ -10,7 +10,7 @@ public class TicTacToeTest {
 	@Test
 	public void givenFirstTurnPlayerItShouldBeX() {
 
-		assertThat(ticTacToe.firstPlayer(), CoreMatchers.is('X'));
+		assertThat(ticTacToe.nextPlayer(), CoreMatchers.is('X'));
 	}
 
 	@Test
@@ -18,7 +18,7 @@ public class TicTacToeTest {
 
 		ticTacToe.play(2, 2); // X
 
-		assertThat(ticTacToe.SecondPlayer() ,CoreMatchers.is('O'));
+		assertThat(ticTacToe.nextPlayer(), CoreMatchers.is('O'));
 	}
 
 	@Test
