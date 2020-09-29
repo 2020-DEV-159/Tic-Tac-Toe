@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import com.bnpp.kata.exception.InvalidGridSizeException;
 import com.bnpp.kata.exception.InvalidPositionException;
 import com.bnpp.kata.exception.SpotUnavailableException;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 import org.hamcrest.CoreMatchers;
 import org.junit.Before;
@@ -240,5 +241,11 @@ public class TicTacToeTest {
 						"   |   | X ";
 
 		assertThat(actualBoard).isEqualTo(expectedBoard);
+	}
+
+	@Test
+	public void givenTestNewPosition() throws Exception {
+
+		assertEquals('X', ticTacToe.firstPlayer());
 	}
 }

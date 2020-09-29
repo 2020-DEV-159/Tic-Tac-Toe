@@ -6,6 +6,8 @@ public class Board {
 	private final int size;
 	private char[][] grid;
 	private static final char EMPTY = ' ';
+	public static final int DIM = 3;
+	public static final int SIZE = DIM*DIM;
 
 	public Board(int size) {
 		this.size = size;	
