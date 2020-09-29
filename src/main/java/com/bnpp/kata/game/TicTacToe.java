@@ -11,6 +11,10 @@ public class TicTacToe {
 		return 'O';
 	}
 
+	public char nextPlayer() {
+		return lastPlayer == 'X' ? 'O' : 'X' ;
+	}
+
 	public void play(int row, int column) {
 		lastPlayer = SecondPlayer();
 	}
