@@ -2,14 +2,15 @@ package com.bnpp.kata.game;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
-import com.bnpp.kata.exception.InvalidGridSizeException;
-import com.bnpp.kata.exception.InvalidPositionException;
-import com.bnpp.kata.exception.SpotUnavailableException;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
+
 import org.hamcrest.CoreMatchers;
 import org.junit.Before;
 import org.junit.Test;
+
+import com.bnpp.kata.exception.InvalidGridSizeException;
+import com.bnpp.kata.exception.InvalidPositionException;
+import com.bnpp.kata.exception.SpotUnavailableException;
 
 public class TicTacToeTest {
 	private TicTacToe ticTacToe;
@@ -246,6 +247,14 @@ public class TicTacToeTest {
 	@Test
 	public void givenTestNewPosition() throws Exception {
 
-		assertEquals('X', ticTacToe.firstPlayer());
+		assertThat(ticTacToe.firstPlayer(), CoreMatchers.is('O'));
+	}
+	
+	@Test
+	public void givenTestNewPosition1() throws Exception {
+		
+		ticTacToe.secondRoundPlay(2, 2); // O
+
+		assertThat(ticTacToe.SecondPlayer(), CoreMatchers.is('O'));
 	}
 }
