@@ -206,4 +206,18 @@ public class TicTacToeTest {
 
 		assertThat(ticTacToe.play(3, 3), CoreMatchers.is(GameResult.DRAW)); // All spots have been field, so we have a DRAW
 	}
+	
+	@Test
+	public void givenAnEmptyBoardwhenShowIsEquals() {
+		
+		String actualEmptyBoard = ticTacToe.getBoard().show();
+		String expectedEmptyBoard =
+				"   |   |   \n" +
+						"---|---|---\n" +
+						"   |   |   \n" +
+						"---|---|---\n" +
+						"   |   |   ";
+
+		assertThat(actualEmptyBoard, CoreMatchers.is(expectedEmptyBoard));
+	}
 }

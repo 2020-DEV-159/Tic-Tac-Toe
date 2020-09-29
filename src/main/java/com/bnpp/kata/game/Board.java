@@ -26,6 +26,38 @@ public class Board {
 		}
 	}
 
+	public String show() {
+		StringBuilder board = new StringBuilder();
+		for (int row = 0; row < size; row++) {
+			StringBuilder columnSeparator = new StringBuilder();
+			addRow(board, grid[row], columnSeparator);
+			addRowSeparator(board, columnSeparator);
+		}
+		removeLastRowSeparator(board);
+		return board.toString();
+	}
+
+	private void addRow(StringBuilder board, char[] chars, StringBuilder columnSeparator) {
+		for (int column = 0; column < size; column++) {
+			board.append(" ");
+			board.append(chars[column]);
+			board.append(" |");
+			columnSeparator.append("---|");
+		}
+	}
+
+	private void addRowSeparator(StringBuilder board, StringBuilder columnSeparator) {
+		board.deleteCharAt(board.length() - 1);
+		board.append("\n");
+		columnSeparator.deleteCharAt(columnSeparator.length() - 1);
+		board.append(columnSeparator);
+		board.append("\n");
+	}
+
+	private void removeLastRowSeparator(StringBuilder board) {
+		board.delete((board.deleteCharAt(board.length() - 1).lastIndexOf("\n")), board.length());
+	}
+
 	public int getSize() {
 		return size;
 	}
