@@ -2,7 +2,7 @@ package com.bnpp.kata.game;
 
 public class TicTacToe {
 	
-	public char nextPlayer() {
+	public char firstPlayer() {
 		return 'X' ;
 	}
 }

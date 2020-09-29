@@ -11,6 +11,6 @@ public class TicTacToeTest {
 
 		TicTacToe ticTacToe = new TicTacToe();
 
-		assertThat(ticTacToe.nextPlayer(), CoreMatchers.is('X'));
+		assertThat(ticTacToe.firstPlayer(), CoreMatchers.is('X'));
 	}
 }
