@@ -25,4 +25,12 @@ public class Board {
 			}
 		}
 	}
+
+	public int getSize() {
+		return size;
+	}
+
+	public char[][] getGrid() {
+		return grid;
+	}
 }

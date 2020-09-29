@@ -37,4 +37,12 @@ public class TicTacToe {
 		}
 		return GameResult.NO_WINNER;
 	}
+
+	public Board getBoard() {
+		return board;
+	}
+
+	public char getLastPlayer() {
+		return lastPlayer;
+	}
 }
