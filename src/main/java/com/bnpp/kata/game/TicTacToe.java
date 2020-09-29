@@ -5,6 +5,7 @@ import com.bnpp.kata.Strategy.HorizontalStrategy;
 public class TicTacToe {
 	private char lastPlayer;
 	private final Board board;
+	private static final char EMPTY = ' ';
 
 	public TicTacToe(int boardSize) {
 		board = new Board(boardSize);
@@ -46,7 +47,7 @@ public class TicTacToe {
 	}
 
 	private void assignSpot(int row, int column, char player) {
-		if (board.getGrid()[row - 1][column - 1] == ' ') {
+		if (board.getGrid()[row - 1][column - 1] == EMPTY) {
 			board.getGrid()[row - 1][column - 1] = player;
 		}
 	}
