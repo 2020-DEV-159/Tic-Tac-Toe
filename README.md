@@ -18,16 +18,15 @@ The rules are described below :
 
 1) X always goes first.
 2) Players cannot play on a played position.
-3) Players alternate placing Xâ€™s and Oâ€™s on the board until either:
+3) Players alternate placing X’s and O’s on the board until either:
 4) One player has three in a row, horizontally, vertically or diagonally
 5) All nine squares are filled.
-6) If a player is able to draw three Xâ€™s or three Oâ€™s in a row, that player wins.
+6) If a player is able to draw three X’s or three O’s in a row, that player wins.
 7) If all nine squares are filled and neither player has three in a row, the game is a draw.
 ```
 
 # Functional Cases:
 ```
-player X turn will played by user,player O turn will be played by Computer(Computer turn will be immediately played after player X turn)
 
 1) Player X should be always given the first move and should be able to place the mark in gameBoard
 2) Player 0 should be given the next move , following player X
@@ -52,6 +51,9 @@ player X turn will played by user,player O turn will be played by Computer(Compu
 21) Exception should be thrown when any player selects the range other than 0 to 8
 22) Game should not allow any player to place their mark in already occupied position
 ```
+
+# Player X turn will played by user, Player O turn will be played by Computer(Computer turn will be immediately played after player X turn)
+
 
 # Prerequisites
 To run this program below softwares needs to be installed
@@ -106,6 +108,5 @@ Then give row value, column value to be placed as depicted below
 0,1 [in words : Zero comma One]
 
 Please provide the row and column values until the game ends!!
-
 
 
