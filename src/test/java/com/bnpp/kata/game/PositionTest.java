@@ -1,13 +1,15 @@
 package com.bnpp.kata.game;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.Test;
 import com.bnpp.kata.TicTacToeRunner.Position;
 
 public class PositionTest {
-	
+
 	@Test
 	public void givenFirstPlayerPosition() throws Exception {
 
@@ -46,6 +48,25 @@ public class PositionTest {
 		list.remove(new Integer(2));	
 
 		assertEquals(list, new Position().move(1).move(2).possibleMoves());
+	}
+
+	@Test
+	public void givenPlayerIsWinFor() throws Exception {
+
+		assertFalse(new Position().isWinFor('x'));	
+		assertTrue(new Position("xxx    " , 'x').isWinFor('x'));
+		assertTrue(new Position(
+				"x  "
+						+ "x  "
+						+ "x  " , 'x').isWinFor('x'));
+		assertTrue(new Position(
+				"o  "
+						+ " o "
+						+ "  o" , 'x').isWinFor('o'));
+		assertTrue(new Position(
+				"  o"
+						+ " o "
+						+ "o  " , 'x').isWinFor('o'));
 	}
 }
 
