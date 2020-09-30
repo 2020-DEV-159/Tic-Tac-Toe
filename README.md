@@ -27,6 +27,8 @@ The rules are described below :
 
 # Functional Cases:
 ```
+player X turn will played by user,player O turn will be played by Computer(Computer turn will be immediately played after player X turn)
+
 1) Player X should be always given the first move and should be able to place the mark in gameBoard
 2) Player 0 should be given the next move , following player X
 3) Player X should be given the next move , following player O
@@ -104,5 +106,6 @@ Then give row value, column value to be placed as depicted below
 0,1 [in words : Zero comma One]
 
 Please provide the row and column values until the game ends!!
+
 
 
