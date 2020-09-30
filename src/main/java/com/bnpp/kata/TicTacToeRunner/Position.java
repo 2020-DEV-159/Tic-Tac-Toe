@@ -29,4 +29,10 @@ public class Position {
 		turn = turn == 'X' ? 'O' : 'X';
 		return this;
 	}
+
+	public Position unmove(int idx) {
+		board[idx] = ' ';
+		turn = turn == 'X' ? 'O' : 'X';
+		return this;
+	}
 }

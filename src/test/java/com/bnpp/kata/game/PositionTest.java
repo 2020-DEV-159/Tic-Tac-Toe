@@ -23,5 +23,14 @@ public class PositionTest {
 		assertEquals('O',position.turn);
 		assertEquals(" X       ", position.toString());
 	}
+
+	@Test
+	public void givenPlayerUnmovePosition() throws Exception {
+		
+		Position position = new Position().move(1).unmove(1);
+		
+		assertEquals('X',position.turn);
+		assertEquals("         ", position.toString());
+	}
 }
 
