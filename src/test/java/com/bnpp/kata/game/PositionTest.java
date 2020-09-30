@@ -36,7 +36,7 @@ public class PositionTest {
 	}
 
 	@Test
-	public void testPossibleMoves() throws Exception {
+	public void givenPossibleMoves() throws Exception {
 
 		List<Integer> list = new ArrayList<>();	
 		for(int i=0; i < Position.SIZE ; i++) {
