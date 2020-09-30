@@ -8,14 +8,14 @@ import com.bnpp.kata.TicTacToeRunner.Position;
 public class PositionTest {
 
 	@Test
-	public void givenTestNewPosition() throws Exception {
+	public void givenFirstPlayerPosition() throws Exception {
 		Position position = new Position();
 
 		assertThat(position.turn, CoreMatchers.is('X'));
 	}
 
 	@Test
-	public void givenTestNewSecondPosition() throws Exception {
+	public void givenSecondPlayerPosition() throws Exception {
 
 		Position position = new Position().move(1);	
 
