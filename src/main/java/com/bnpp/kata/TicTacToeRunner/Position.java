@@ -16,13 +16,13 @@ public class Position {
 	private Map<Integer, Integer> cache = new HashMap<Integer,Integer>();
 
 	public Position() {
-		turn = 'X';
+		turn = 'x';
 		board = new char[SIZE];
 		for(int i=0; i < SIZE ; i++) {
 			board[i] = EMPTY;	
 		}
 	}
-	
+
 	public Position(String string, char c) {
 		this.board =string.toCharArray();
 		this.turn = turn;
@@ -35,13 +35,13 @@ public class Position {
 
 	public Position move(int idx) {
 		board[idx] = turn;
-		turn = turn == 'X' ? 'O' : 'X';
+		turn = turn == 'x' ? 'o' : 'x';
 		return this;
 	}
 
 	public Position unmove(int idx) {
 		board[idx] = EMPTY;
-		turn = turn == 'X' ? 'O' : 'X';
+		turn = turn == 'x' ? 'o' : 'x';
 		return this;
 	}
 

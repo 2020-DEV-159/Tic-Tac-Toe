@@ -32,8 +32,8 @@ public class TicTacToeGameRunner extends JFrame{
 
 					}
 					if(position.isGameEnd()) {;
-					String message = position.isWinFor('X') ? "You Won!" :
-						position.isWinFor('O') ? "Computer Won!" : "Draw";
+					String message = position.isWinFor('x') ? "You Won!" :
+						position.isWinFor('o') ? "Computer Won!" : "Draw";
 					JOptionPane.showMessageDialog(null, message);
 					}
 				}

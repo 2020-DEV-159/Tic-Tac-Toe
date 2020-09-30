@@ -15,7 +15,7 @@ public class PositionTest {
 
 		Position position = new Position();
 
-		assertEquals('X',position.turn);
+		assertEquals('x',position.turn);
 		assertEquals("         ", position.toString());
 	}
 
@@ -24,8 +24,8 @@ public class PositionTest {
 
 		Position position = new Position().move(1);	
 
-		assertEquals('O',position.turn);
-		assertEquals(" X       ", position.toString());
+		assertEquals('o',position.turn);
+		assertEquals(" x       ", position.toString());
 	}
 
 	@Test
@@ -33,7 +33,7 @@ public class PositionTest {
 
 		Position position = new Position().move(1).unmove(1);
 
-		assertEquals('X',position.turn);
+		assertEquals('x',position.turn);
 		assertEquals("         ", position.toString());
 	}
 
