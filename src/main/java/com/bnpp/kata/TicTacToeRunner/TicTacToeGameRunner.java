@@ -1,4 +1,4 @@
-package com.bnpp.kata.game;
+package com.bnpp.kata.TicTacToeRunner;
 
 import java.awt.Dimension;
 import java.awt.Font;
@@ -11,22 +11,24 @@ import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
 public class TicTacToeGameRunner extends JFrame{
-	TicTacToe tictactoe =new TicTacToe(3);
-	Board board =new Board(3);
+	Position position =new Position();
+	JButton[] buttons =new JButton[Position.SIZE];
 
 	public TicTacToeGameRunner() {
-		setLayout(new GridLayout(board.DIM ,board.DIM));
-		for(int i= 0; i <  board.SIZE; i++) {
+		setLayout(new GridLayout(Position.DIM ,Position.DIM));
+		for(int i= 0; i < Position.SIZE ; i++) {
 			final JButton button = createButtons();
+			buttons[i] =button;
 			final int idx =i;
 			button.addMouseListener(new MouseAdapter() {
 				@Override
 				public void mouseClicked(MouseEvent e) {
-					button.setText(Character.toString(tictactoe.nextPlayer()));
-					tictactoe.play(idx, idx);
+					button.setText(Character.toString(position.turn));
+					position.move(idx);
 				}
 			});
-		}	
+		}
+
 		pack();
 		setVisible(true);
 	}
@@ -39,7 +41,8 @@ public class TicTacToeGameRunner extends JFrame{
 		return button;
 	}
 
-	public static void main(String[] args) { 
+	public static void main(String[] args) {
+		System.out.println("hello");      
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
 				new TicTacToeGameRunner();

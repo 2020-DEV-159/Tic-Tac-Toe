@@ -243,18 +243,4 @@ public class TicTacToeTest {
 
 		assertThat(actualBoard).isEqualTo(expectedBoard);
 	}
-
-	@Test
-	public void givenTestNewPosition() throws Exception {
-
-		assertThat(ticTacToe.firstPlayer(), CoreMatchers.is('X'));
-	}
-	
-	@Test
-	public void givenTestNewSecondPosition() throws Exception {
-		
-		ticTacToe.secondRoundPlay(2, 2); // O
-
-		assertThat(ticTacToe.SecondPlayer(), CoreMatchers.is('O'));
-	}
 }
