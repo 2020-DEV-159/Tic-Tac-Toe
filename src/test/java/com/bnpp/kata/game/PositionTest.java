@@ -68,16 +68,24 @@ public class PositionTest {
 						+ " o "
 						+ "o  " , 'x').isWinFor('o'));
 	}
-	
+
 	@Test
 	public void givenPossibleMinimax() throws Exception {
-		
+
 		assertEquals( 6, new Position("xxx      ", 'x').minimax());
 		assertEquals(-6, new Position("ooo      ", 'o').minimax());
 		assertEquals( 0, new Position("xoxxoxoxo", 'x').minimax());
 		assertEquals( 6, new Position("xxx       ", 'x').minimax());
 		assertEquals(-6, new Position("ooo       ", 'o').minimax());
 		assertEquals( 0, new Position().minimax());
+	}
+
+	@Test
+	public void givenPlayerBestMove() throws Exception {
+		
+		assertEquals( 2, new Position("xx       ", 'x').bestMove());
+		assertEquals( 2, new Position("oo       ", 'o').bestMove());
+
 	}
 }
 

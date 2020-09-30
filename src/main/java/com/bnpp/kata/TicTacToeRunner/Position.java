@@ -2,6 +2,7 @@ package com.bnpp.kata.TicTacToeRunner;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -112,5 +113,19 @@ public class Position {
 				total++;
 		}
 		return total;	
+	}
+
+	public int bestMove() {
+		Comparator<Integer> cmp = new Comparator<Integer>() {
+			public int compare(Integer first ,Integer second) {
+				int a = move(first).minimax();
+				unmove(first);
+				int b =move(second).minimax();
+				unmove(second);
+				return a - b;
+			}
+		};
+		List<Integer> list = possibleMoves();
+		return turn == 'x' ? Collections.max(list,cmp) : Collections.min(list,cmp);
 	}
 }
