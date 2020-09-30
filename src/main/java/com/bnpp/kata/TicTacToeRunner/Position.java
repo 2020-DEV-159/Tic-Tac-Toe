@@ -6,6 +6,7 @@ import java.util.List;
 public class Position {
 	public static final int DIM = 3;
 	public static final int SIZE = DIM*DIM;
+	private static final char EMPTY = ' ';
 	public char turn;
 	public char[] board;
 
@@ -13,7 +14,7 @@ public class Position {
 		turn = 'X';
 		board = new char[SIZE];
 		for(int i=0; i < SIZE ; i++) {
-			board[i] = ' ';	
+			board[i] = EMPTY;	
 		}
 	}
 
@@ -34,7 +35,7 @@ public class Position {
 	}
 
 	public Position unmove(int idx) {
-		board[idx] = ' ';
+		board[idx] = EMPTY;
 		turn = turn == 'X' ? 'O' : 'X';
 		return this;
 	}
@@ -42,7 +43,7 @@ public class Position {
 	public List<Integer> possibleMoves() {
 		List<Integer> list = new ArrayList<>();
 		for(int i=0; i < board.length ; i++) {
-			if(board[i] == ' ' )
+			if(board[i] == EMPTY )
 				list.add(i);	
 		}
 		return list;
