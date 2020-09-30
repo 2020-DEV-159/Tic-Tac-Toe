@@ -1,7 +1,10 @@
 package com.bnpp.kata.TicTacToeRunner;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Position {
 	public static final int DIM = 3;
@@ -9,6 +12,7 @@ public class Position {
 	private static final char EMPTY = ' ';
 	public char turn;
 	public char[] board;
+	private Map<Integer, Integer> cache = new HashMap<Integer,Integer>();
 
 	public Position() {
 		turn = 'X';
@@ -70,5 +74,43 @@ public class Position {
 				return false;	
 		}
 		return true;
+	}
+
+	public int minimax() {
+		Integer key = code();
+		Integer value = cache.get(key);
+		if(value != null ) return value;
+		if(isWinFor('x')) return blanks();
+		if(isWinFor('o')) return -blanks();
+		if(blanks() == 0) return 0;
+		List<Integer> list = new ArrayList<>();
+		for(Integer idx : possibleMoves()) {
+			list.add(move(idx).minimax());	
+			unmove(idx);
+		}
+		value = turn == 'x' ? Collections.max(list) : Collections.min(list) ;
+		cache.put(key, value);
+		return value;
+	}
+
+	private int code() {
+		int value = 0;
+		for(int i= 0; i < SIZE ; i++) {
+			value = value * 3;
+			if(board[i] == 'x')
+				value += 1;
+			else if(board[i] == 'o')
+				value += 2;
+		}
+		return value;
+	}
+
+	public int blanks() {
+		int total =0;
+		for(int i=0; i < SIZE ; i++) {
+			if(board[i] == ' ')
+				total++;
+		}
+		return total;	
 	}
 }

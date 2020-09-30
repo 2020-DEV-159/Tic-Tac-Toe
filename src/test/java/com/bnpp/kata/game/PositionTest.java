@@ -68,5 +68,16 @@ public class PositionTest {
 						+ " o "
 						+ "o  " , 'x').isWinFor('o'));
 	}
+	
+	@Test
+	public void givenPossibleMinimax() throws Exception {
+		
+		assertEquals( 6, new Position("xxx      ", 'x').minimax());
+		assertEquals(-6, new Position("ooo      ", 'o').minimax());
+		assertEquals( 0, new Position("xoxxoxoxo", 'x').minimax());
+		assertEquals( 6, new Position("xxx       ", 'x').minimax());
+		assertEquals(-6, new Position("ooo       ", 'o').minimax());
+		assertEquals( 0, new Position().minimax());
+	}
 }
 
