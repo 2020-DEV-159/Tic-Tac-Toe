@@ -22,7 +22,7 @@ public class Position {
 			board[i] = EMPTY;	
 		}
 	}
-
+	
 	public Position(String string, char c) {
 		this.board =string.toCharArray();
 		this.turn = turn;
@@ -127,5 +127,9 @@ public class Position {
 		};
 		List<Integer> list = possibleMoves();
 		return turn == 'x' ? Collections.max(list,cmp) : Collections.min(list,cmp);
+	}
+
+	public boolean isGameEnd() {
+		return isWinFor('x') || isWinFor('o') || blanks() == 0;
 	}
 }

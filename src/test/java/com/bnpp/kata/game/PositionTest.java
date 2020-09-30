@@ -82,10 +82,19 @@ public class PositionTest {
 
 	@Test
 	public void givenPlayerBestMove() throws Exception {
-		
+
 		assertEquals( 2, new Position("xx       ", 'x').bestMove());
 		assertEquals( 2, new Position("oo       ", 'o').bestMove());
 
+	}
+
+	@Test
+	public void givenPlayIsGameEnd() throws Exception {
+
+		assertFalse(new Position().isGameEnd());
+		assertTrue(new Position("xxx      ",'x').isGameEnd());
+		assertTrue(new Position("ooo      ",'x').isGameEnd());
+		assertTrue(new Position("xoxxoxoxo", 'x').isGameEnd());
 	}
 }
 
